@@ -1,0 +1,1102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nanny Jones Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Imperial+Script&family=Rouge+Script&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --cream-light: #F5F2EC;
+      --cream-medium: #E0D7C6;
+      --brown-dark: #6B4C3B;
+      --brown-light: #A1866F;
+      --accent-dark: #2C2C2C;
+      --accent-light: #FFF;
+      --link-color: #6A5ACD;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #fff url('https://www.transparenttextures.com/patterns/paper-fibers.png') repeat;
+      color: var(--accent-dark);
+      line-height: 1.6;
+      padding: 10px;
+    }
+    a {
+      text-decoration: none;
+      color: var(--link-color);
+    }
+    header {
+      text-align: center;
+      padding: 35px 20px;
+      background: var(--brown-light) url('https://www.transparenttextures.com/patterns/fabric-of-squares.png') repeat;
+      /* Remove border-bottom from the title card section */
+      /* border-bottom: 1px solid #ddd; */
+      box-shadow: 0 8px 32px rgba(60, 40, 20, 0.65);
+      border-radius: 0 0 24px 24px;
+      position: relative;
+      z-index: 2;
+    }
+    header h1 {
+      font-family: 'Rouge Script', cursive !important;
+      font-size: 6rem;
+      color: var(--accent-light);
+      margin-bottom: 2px;
+      margin-top: 2px;
+      text-shadow: 2px 2px 5px var(--brown-dark);
+    }
+    header .subtitle {
+      font-size: 0.9rem; /* Make subtitle text smaller */
+      color: var(--brown-dark);
+      margin: 0 0 2px 0; /* Remove top margin, keep small bottom margin */
+      font-weight: bold;
+      text-transform: uppercase;
+      text-shadow: 2px 2px 5px var(--cream-light);
+    }
+    header .location {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+      margin-top: 10px;
+      padding: 5px 15px;
+      background: rgba(245,242,236,0.7);
+      border-radius: 25px;
+      font-size: 1rem;
+      color: var(--brown-dark);
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      padding: 20px;
+      gap: 2vw;
+      flex-wrap: wrap;
+      animation: slideDown 1s forwards;
+    }
+    nav a {
+      font-weight: bold;
+      padding: 1vw 2vw;
+      border-radius: 12px;
+      backdrop-filter: blur(8px);
+      background: rgba(161,134,111,.3);
+      color: var(--accent-dark);
+      box-shadow: 0 4px 8px rgba(0,0,0,.15);
+      transition: .3s;
+      opacity: 0;
+      transform: translateY(-20px);
+      animation: navFadeIn 0.7s forwards;
+    }
+    nav a:hover {
+      background: rgba(161,134,111,.5);
+      color: var(--brown-dark);
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 8px 15px rgba(0,0,0,.25);
+    }
+    @keyframes navFadeIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    @keyframes slideDown {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    section {
+      width: 90%;
+      max-width: 1000px;
+      margin: 50px auto;
+      padding: 4vw;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,.2);
+    }
+    #about {
+      background-color: var(--cream-light);
+    }
+    #history {
+      background-color: var(--cream-medium);
+    }
+    #services {
+      background-color: var(--cream-light);
+    }
+    #method {
+      background-color: var(--cream-medium);
+    }
+    #calendar {
+      background-color: var(--cream-medium);
+      margin-top: 50px;
+      padding: 0;
+    }
+    section h2, section h3 {
+      text-align: center;
+      color: var(--brown-dark);
+      margin-bottom: 20px;
+      font-family: 'Rouge Script', cursive;
+      font-size: 3.5rem; /* Made card/section header font bigger */
+    }
+    section p {
+      margin-bottom: 20px;
+    }
+    .button-link {
+      font-weight: bold;
+      padding: 10px 25px;
+      border-radius: 12px;
+      backdrop-filter: blur(8px);
+      background: rgba(161,134,111,.3);
+      color: var(--accent-dark);
+      box-shadow: 0 4px 8px rgba(0,0,0,.15);
+      transition: .3s;
+      display: inline-block;
+      text-align: center;
+      margin-top: 20px;
+      border: none; /* Remove dark border */
+    }
+    .button-link:hover {
+      background: rgba(161,134,111,.5);
+      color: var(--brown-dark);
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 8px 15px rgba(0,0,0,.25);
+    }
+    .method-section {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+    .method-item {
+      width: 180px;
+      padding: 10px;
+      background: #fff url('https://www.transparenttextures.com/patterns/paper-fibers.png') repeat;
+      border-radius: 12px;
+      box-shadow: 0 6px 15px rgba(0,0,0,.3), 0 2px 24px rgba(60,40,20,0.25); /* Enhanced shadow */
+      text-align: center;
+      transition: .5s;
+      transform: translateY(0);
+      font-family: Arial, Helvetica, sans-serif;
+      clip-path: polygon(3% 0%,97% 0%,100% 5%,100% 95%,97% 100%,3% 100%,0% 95%,0% 5%);
+      border: 1px solid rgba(107,76,59,0.3);
+    }
+    .method-item:hover {
+      transform: translateY(-5px) scale(1.05) rotate(-1deg);
+      box-shadow: 0 10px 25px rgba(0,0,0,.5);
+    }
+    .method-item h3 {
+      margin-bottom: 8px;
+      font-size: 1rem;
+      color: var(--brown-dark);
+      font-family: Arial, Helvetica, sans-serif; /* Use normal font for method card titles */
+      font-weight: bold;
+    }
+    .method-item p {
+      font-size: 0.9rem;
+      color: var(--accent-dark);
+    }
+    .service-areas-container {
+      position: relative;
+    }
+    .service-areas {
+      display: flex;
+      gap: 10px;
+      padding: 10px 0;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+    .service-card {
+      padding: 10px 20px;
+      background: #fff url('https://www.transparenttextures.com/patterns/paper-fibers.png') repeat;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,.3);
+      flex: 0 0 auto;
+      text-align: center;
+      white-space: nowrap;
+    }
+    .arrow-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(161,134,111,.5);
+      border: none;
+      color: var(--accent-light);
+      font-size: 1.2rem;
+      padding: 10px;
+      border-radius: 50%;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0,0,0,.2);
+    }
+    .arrow-left {
+      left: -25px;
+    }
+    .arrow-right {
+      right: -25px;
+    }
+    #contact {
+      background-color: var(--cream-light);
+      margin-top: 50px;
+    }
+    .contact-form {
+      max-width: 500px;
+      margin: 0 auto;
+      padding: 2vw;
+      border-radius: 12px;
+      background: #fff url('https://www.transparenttextures.com/patterns/paper-fibers.png') repeat;
+      box-shadow: 0 8px 20px rgba(0,0,0,.13);
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+    .form-row {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .contact-form label {
+      font-weight: bold;
+      color: var(--brown-dark);
+      font-size: 1rem;
+    }
+    .contact-form input,
+    .contact-form select,
+    .contact-form textarea {
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid var(--cream-medium);
+      font-size: 1rem;
+      background: #f5f2ec;
+      color: var(--accent-dark);
+      font-family: inherit;
+      transition: border-color 0.2s;
+    }
+    .contact-form input:focus,
+    .contact-form select:focus,
+    .contact-form textarea:focus {
+      border-color: var(--brown-light);
+      outline: none;
+    }
+    .contact-form textarea {
+      resize: vertical;
+    }
+    .calendar-container {
+      flex: 1 1 320px;
+      min-width: 260px;
+      max-width: 480px;
+      margin: 0;
+      box-sizing: border-box;
+      background: #fff url('https://www.transparenttextures.com/patterns/paper-fibers.png') repeat;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,.18);
+      padding: 2vw;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .calendar-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+    .calendar-nav {
+      background: linear-gradient(135deg, #f5f2ec 60%, #a1866f 100%);
+      border: none;
+      color: var(--brown-dark);
+      font-size: 1.3rem;
+      padding: 6px 12px;
+      border-radius: 50%;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(107,76,59,0.13);
+      transition: background 0.2s, color 0.2s, transform 0.2s;
+      outline: none;
+    }
+    .calendar-nav:hover {
+      background: linear-gradient(135deg, #e0d7c6 60%, #6b4c3b 100%);
+      color: var(--accent-light);
+      transform: scale(1.08);
+    }
+    .calendar-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: transparent;
+    }
+    .calendar-table th, .calendar-table td {
+      width: 14.28%;
+      text-align: center;
+      padding: 8px 0;
+      font-size: 1rem;
+      border-radius: 6px;
+    }
+    .calendar-table th {
+      color: var(--brown-dark);
+      font-weight: bold;
+      background: rgba(224,215,198,0.5);
+    }
+    .calendar-table td {
+      cursor: pointer;
+      background: rgba(245,242,236,0.7);
+      transition: background 0.2s, color 0.2s;
+      position: relative;
+    }
+    .calendar-table td:hover {
+      background: rgba(161,134,111,0.25);
+      color: var(--brown-dark);
+    }
+    .calendar-table td.today {
+      background: rgba(161,134,111,0.45);
+      color: var(--accent-light);
+      font-weight: bold;
+      border: 2px solid var(--brown-light);
+    }
+    .calendar-dialog {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(60,40,20,0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+    }
+    .calendar-dialog-content {
+      background: #fff url('https://www.transparenttextures.com/patterns/paper-fibers.png') repeat;
+      border-radius: 14px;
+      box-shadow: 0 8px 32px rgba(60,40,20,0.18);
+      padding: 28px 24px 18px 24px;
+      min-width: 280px;
+      max-width: 90vw;
+      position: relative;
+      text-align: center;
+    }
+    .calendar-dialog-close {
+      position: absolute;
+      top: 12px;
+      right: 18px;
+      font-size: 1.5rem;
+      color: var(--brown-dark);
+      cursor: pointer;
+      font-weight: bold;
+      transition: color 0.2s;
+    }
+    .calendar-dialog-close:hover {
+      color: var(--brown-light);
+    }
+    #dialogEvents {
+      margin-top: 12px;
+      font-size: 1rem;
+      color: var(--accent-dark);
+    }
+    .footer-title-card {
+      text-align: center;
+      padding: 35px 20px;
+      background: var(--brown-light) url('https://www.transparenttextures.com/patterns/fabric-of-squares.png') repeat;
+      box-shadow: 0 -8px 32px rgba(60, 40, 20, 0.65);
+      border-radius: 24px 24px 0 0;
+      position: relative;
+      z-index: 2;
+      margin-top: 60px;
+      transform: scaleY(-1);
+    }
+    .footer-content {
+      transform: scaleY(-1);
+      display: inline-block;
+    }
+    .footer-title {
+      font-family: 'Rouge Script', cursive !important;
+      font-size: 3rem;
+      color: var(--accent-light);
+      margin-bottom: 2px;
+      margin-top: 2px;
+      text-shadow: 2px 2px 5px var(--brown-dark);
+    }
+    .footer-subtitle {
+      font-size: 1rem;
+      color: var(--brown-dark);
+      margin: 0 0 2px 0;
+      font-weight: bold;
+      text-shadow: 2px 2px 5px var(--cream-light);
+    }
+    .footer-contact {
+      font-size: 1rem;
+      color: var(--brown-dark);
+      margin-top: 8px;
+    }
+    #calendarMonthYear {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 1rem;
+      color: var(--brown-dark);
+      font-weight: bold;
+      text-align: center;
+      margin: 0 18px;
+      letter-spacing: 1px;
+    }
+    .calendar-event-indicator {
+      display: inline-block;
+      width: 7px;
+      height: 7px;
+      background: var(--brown-light);
+      border-radius: 50%;
+      margin-left: 4px;
+      margin-bottom: 2px;
+      vertical-align: middle;
+      box-shadow: 0 0 2px rgba(107,76,59,0.3);
+    }
+    .calendar-flex-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4vw;
+      justify-content: center;
+      align-items: flex-start;
+      width: 100%;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0;
+      background: var(--cream-medium); /* Match My Method section background */
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,.13);
+      padding: 2vw;
+      box-sizing: border-box;
+    }
+
+    .calendar-container {
+      flex: 1 1 320px;
+      min-width: 260px;
+      max-width: 480px;
+      margin: 0;
+      box-sizing: border-box;
+      background: #fff url('https://www.transparenttextures.com/patterns/paper-fibers.png') repeat;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,.18);
+      padding: 2vw;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .calendar-events-list {
+      flex: 1 1 320px;
+      min-width: 260px;
+      max-width: 480px;
+      margin: 0;
+      box-sizing: border-box;
+      background: #fff; /* Remove texture background */
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,.13);
+      padding: 2vw;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+    }
+
+    #testimonials {
+      background-color: var(--cream-light);
+      margin-top: 50px;
+      margin-bottom: 0;
+      width: 90%;
+      max-width: 1000px;
+      padding: 4vw;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,.2);
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .testimonial-areas-container {
+      position: relative;
+      margin-top: 18px;
+      margin-bottom: 0;
+    }
+    .testimonial-areas {
+      display: flex;
+      gap: 18px;
+      padding: 10px 0;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+    .testimonial-card {
+      background: #fff url('https://www.transparenttextures.com/patterns/paper-fibers.png') repeat;
+      border-radius: 16px;
+      box-shadow: 0 4px 16px rgba(0,0,0,.13);
+      flex: 0 0 180px;
+      min-width: 180px;
+      max-width: 180px;
+      height: 320px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 24px 12px 18px 12px;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .testimonial-card:hover {
+      transform: translateY(-5px) scale(1.04);
+      box-shadow: 0 8px 32px rgba(60,40,20,0.18);
+    }
+    .testimonial-family {
+      width: 100%;
+      margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .testimonial-family-name {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: var(--brown-dark);
+      background: var(--cream-medium);
+      padding: 8px 18px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(107,76,59,0.13);
+      letter-spacing: 1px;
+    }
+    .testimonial-text {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      margin-top: 8px; /* Move testimonial text closer to family name */
+    }
+    .testimonial-text p {
+      font-size: 1.05rem;
+      color: var(--accent-dark);
+      margin-bottom: 12px;
+      margin-top: 0;
+      font-style: italic;
+    }
+    .testimonial-arrow {
+      position: absolute;
+      top: 40%; /* Move arrows up so they don't fall down too much */
+      transform: translateY(-1%);
+      background: linear-gradient(135deg, #f5f2ec 60%, #a1866f 100%);
+      border: none;
+      color: var(--brown-dark);
+      font-size: 1.3rem;
+      padding: 6px 12px;
+      border-radius: 50%;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(107,76,59,0.13);
+      transition: background 0.2s, color 0.2s, transform 0.2s;
+      outline: none;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .testimonial-arrow:hover {
+      background: linear-gradient(135deg, #e0d7c6 60%, #6b4c3b 100%);
+      color: var(--accent-light);
+      transform: scale(1.08);
+    }
+    .testimonial-arrow.arrow-left {
+      left: -30px;
+    }
+    .testimonial-arrow.arrow-right {
+      right: -30px;
+    }
+    @media (max-width: 700px) {
+      .testimonial-card {
+        /* min-width: 80vw;
+        max-width: 70vw; */
+        height: auto;
+        width: auto;
+        padding: 18px 6vw;
+      }
+      .testimonial-arrow.arrow-left {
+        left: 0;
+      }
+      .testimonial-arrow.arrow-right {
+        right: 0;
+      }
+      .testimonial-areas {
+        gap: 8px;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .calendar-flex-wrapper {
+        flex-direction: column;
+        gap: 32px;
+        align-items: center;
+        padding: 4vw;
+        max-width: 98vw;
+      }
+      .calendar-container,
+      .calendar-events-list {
+        max-width: 100vw;
+        width: 100%;
+        min-width: 0;
+        padding: 2vw;
+        border-radius: 12px;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .calendar-flex-wrapper {
+        padding: 2vw;
+        gap: 18px;
+        border-radius: 8px;
+      }
+      .calendar-container,
+      .calendar-events-list {
+        max-width: 100vw;
+        width: 100%;
+        min-width: 0;
+        padding: 2vw;
+        border-radius: 8px;
+        align-items: center;
+        justify-content: center;
+      }
+      .calendar-table th, .calendar-table td {
+        font-size: 0.95rem;
+        padding: 6px 0;
+      }
+      .calendar-header h3,
+      .calendar-events-list h3 {
+        font-size: 1.3rem !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Nanny Jones</h1>
+    <p class="subtitle">MORE THAN JUST A NANNY</p>
+    <a class="location" style="width:auto;" href="https://www.google.com/maps/place/Long+Island,+NY" target="_blank" rel="noopener">
+      📍 Long Island, NY
+    </a>
+  </header>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#history">History</a>
+    <a href="#services">Services</a>
+    <a href="#method">My Method</a>
+    <a href="#testimonials">Client Testimonials</a>
+    <a href="#calendar">Calendar</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      As a career Governess Nanny, your children are my main focus. I am a highly educated private in-home Nanny, Parenting Coach, Trainer, and Organizer delivering personalized, nurturing, and educational childcare. I have experience with newborns, young children, twins, and various family dynamics, focusing on care, education, nutrition, and overall development.
+    </p>
+    <p>
+      Valid US Passport | NY State Driver’s License | Professional Certifications
+    </p>
+  </section>
+  <section id="history">
+    <h2>History / Background</h2>
+    <p>
+      Over 30 years in childcare, starting as a babysitter and camp counselor, progressing to teaching and mentoring roles, ultimately becoming a full-time private Governess Nanny.
+    </p>
+    <div style="text-align:center">
+      <a class="button-link" href="NannyJonesResume.pdf" target="_blank">Complete Experience</a>
+    </div>
+  </section>
+  <section id="services">
+    <h2>Services</h2>
+    <p>
+      Primary location: NYC and Long Island. I work 1-on-1, providing 50+ positions and services regularly and flexibly upon request.
+    </p>
+    <h3>Areas of Service</h3>
+    <div class="service-areas-container">
+      <button class="arrow-btn arrow-left" id="scrollLeftBtn">&#10094;</button>
+      <div class="service-areas" id="serviceAreas">
+        <div class="service-card">Coaching</div>
+        <div class="service-card">Certified Newborn Care Specialist</div>
+        <div class="service-card">Private Tutor</div>
+        <div class="service-card">Laundry</div>
+        <div class="service-card">Cooking</div>
+        <div class="service-card">Certified Nutritionist</div>
+        <div class="service-card">Cleaning</div>
+        <div class="service-card">Certified CPR & First Aid</div>
+      </div>
+      <button class="arrow-btn arrow-right" id="scrollRightBtn">&#10095;</button>
+    </div>
+    <div style="text-align:center">
+      <a class="button-link" href="ServiceList.pdf" target="_blank">Complete list of services</a>
+    </div>
+  </section>
+  <section id="method">
+    <h2>My Method</h2>
+    <div class="method-section">
+      <div class="method-item">
+        <h3>Development Enrichment</h3>
+        <p>Focused care and learning for growth.</p>
+      </div>
+      <div class="method-item">
+        <h3>Structured Play</h3>
+        <p>Safe, engaging activities for development.</p>
+      </div>
+      <div class="method-item">
+        <h3>Experiential Learning</h3>
+        <p>Real-world skills through play and academics.</p>
+      </div>
+      <div class="method-item">
+        <h3>Montessori Method</h3>
+        <p>Hands-on learning for independence.</p>
+      </div>
+      <div class="method-item">
+        <h3>Personalized Approach</h3>
+        <p>Care tailored to each child’s needs.</p>
+      </div>
+      <div class="method-item">
+        <h3>Supporting Healthy Diets</h3>
+        <p>Nutritious meals and healthy choices.</p>
+      </div>
+    </div>
+  </section>
+  <section id="testimonials">
+    <h2>Client Testimonials</h2>
+    <div class="testimonial-areas-container">
+      <button class="testimonial-arrow arrow-left" id="testimonialScrollLeft">&#10094;</button>
+      <div class="testimonial-areas" id="testimonialAreas">
+        <div class="testimonial-card">
+          <div class="testimonial-family">
+            <span class="testimonial-family-name">Smith Family</span>
+          </div>
+          <div class="testimonial-text">
+            <p>"Nanny Jones is truly a lifesaver! Our twins adore her and we've seen amazing growth in their learning."</p>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-family">
+            <span class="testimonial-family-name">Butler Family</span>
+          </div>
+          <div class="testimonial-text">
+            <p>"Her structured play and caring nature made our child feel safe and happy every day."</p>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-family">
+            <span class="testimonial-family-name">Patel Family</span>
+          </div>
+          <div class="testimonial-text">
+            <p>"We couldn't ask for a better nanny. She is organized, loving, and always professional."</p>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-family">
+            <span class="testimonial-family-name">Thompson Family</span>
+          </div>
+          <div class="testimonial-text">
+            <p>"Her nutrition advice and tutoring helped our son excel in school and stay healthy."</p>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-family">
+            <span class="testimonial-family-name">Lee Family</span>
+          </div>
+          <div class="testimonial-text">
+            <p>"Nanny Jones brings joy and structure to our home. Highly recommended!"</p>
+          </div>
+        </div>
+      </div>
+      <button class="testimonial-arrow arrow-right" id="testimonialScrollRight">&#10095;</button>
+    </div>
+  </section>
+  <section id="calendar">
+    <h2>Calendar</h2>
+    <div class="calendar-flex-wrapper" style="display: flex; flex-wrap: wrap; gap: 32px; justify-content: center;">
+      <div class="calendar-container">
+        <div class="calendar-header">
+          <button id="prevMonth" class="calendar-nav">&#10094;</button>
+          <span id="calendarMonthYear"></span>
+          <button id="nextMonth" class="calendar-nav">&#10095;</button>
+        </div>
+        <table class="calendar-table">
+          <thead>
+            <tr>
+              <th>Sun</th>
+              <th>Mon</th>
+              <th>Tue</th>
+              <th>Wed</th>
+              <th>Thu</th>
+              <th>Fri</th>
+              <th>Sat</th>
+            </tr>
+          </thead>
+          <tbody id="calendarBody"></tbody>
+        </table>
+      </div>
+      <div class="calendar-events-list" style="min-width:260px; max-width:340px; background: #fff url('https://www.transparenttextures.com/patterns/paper-fibers.png') repeat; border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,.13); padding: 24px 18px; margin-top: 0;">
+        <h3 style="color: var(--brown-dark); font-family: 'Rouge Script', cursive; font-size: 2rem; text-align:center; margin-bottom: 18px;">Upcoming Events</h3>
+        <ul id="upcomingEvents" style="list-style: none; padding: 0; margin: 0; font-size: 1rem; color: var(--accent-dark);"></ul>
+      </div>
+    </div>
+  </section>
+  <div id="calendarDialog" class="calendar-dialog" style="display:none;">
+    <div class="calendar-dialog-content">
+      <span id="closeCalendarDialog" class="calendar-dialog-close">&times;</span>
+      <h3 id="dialogDate"></h3>
+      <div id="dialogEvents"></div>
+    </div>
+  </div>
+  <section id="contact">
+    <h2>Contact</h2>
+    <p class="contact-subtitle" style="text-align:center; color: var(--brown-dark); font-weight: bold; margin-bottom: 18px;">
+      nannyjones@email.com &nbsp;|&nbsp; (555) 123-4567
+    </p>
+    <form class="contact-form" autocomplete="off">
+      <div class="form-row">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required placeholder="Your Name">
+      </div>
+      <div class="form-row">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required placeholder="Your Email">
+      </div>
+      <div class="form-row">
+        <label for="phone">Phone</label>
+        <input type="tel" id="phone" name="phone" placeholder="Your Phone Number">
+      </div>
+      <div class="form-row">
+        <label for="service">Area of Service</label>
+        <select id="service" name="service" required>
+          <option value="">Select an area</option>
+          <option>Coaching</option>
+          <option>Certified Newborn Care Specialist</option>
+          <option>Private Tutor</option>
+          <option>Laundry</option>
+          <option>Cooking</option>
+          <option>Certified Nutritionist</option>
+          <option>Cleaning</option>
+          <option>Certified CPR & First Aid</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="form-row">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="4" placeholder="How can I help you?"></textarea>
+      </div>
+      <div class="form-row" style="text-align:center;">
+        <button type="submit" class="button-link">Send Message</button>
+      </div>
+    </form>
+  </section>
+  <footer class="footer-title-card">
+    <div class="footer-content">
+      <h1 class="footer-title">Nanny Jones</h1>
+      <p class="footer-subtitle">© 2025 Nanny Jones. All rights reserved.</p>
+      <p class="footer-contact">Contact: nannyjones@email.com | (555) 123-4567</p>
+    </div>
+  </footer>
+  <script>
+    // Fix for Areas of Service arrows
+    document.addEventListener('DOMContentLoaded', function() {
+      const serviceAreas = document.getElementById('serviceAreas');
+      const scrollLeftBtn = document.getElementById('scrollLeftBtn');
+      const scrollRightBtn = document.getElementById('scrollRightBtn');
+      const cardWidth = serviceAreas.querySelector('.service-card').offsetWidth + 10; // 10px gap
+
+      scrollLeftBtn.addEventListener('click', function() {
+        serviceAreas.scrollBy({ left: -cardWidth * 2, behavior: 'smooth' });
+      });
+
+      scrollRightBtn.addEventListener('click', function() {
+        serviceAreas.scrollBy({ left: cardWidth * 2, behavior: 'smooth' });
+      });
+    });
+
+    // Calendar logic
+    document.addEventListener('DOMContentLoaded', function() {
+      // --- Areas of Service arrows ---
+      const serviceAreas = document.getElementById('serviceAreas');
+      const scrollLeftBtn = document.getElementById('scrollLeftBtn');
+      const scrollRightBtn = document.getElementById('scrollRightBtn');
+      const cardWidth = serviceAreas.querySelector('.service-card').offsetWidth + 10;
+      scrollLeftBtn.addEventListener('click', function() {
+        serviceAreas.scrollBy({ left: -cardWidth * 2, behavior: 'smooth' });
+      });
+      scrollRightBtn.addEventListener('click', function() {
+        serviceAreas.scrollBy({ left: cardWidth * 2, behavior: 'smooth' });
+      });
+
+      // --- Calendar ---
+      const calendarBody = document.getElementById('calendarBody');
+      const calendarMonthYear = document.getElementById('calendarMonthYear');
+      const prevMonthBtn = document.getElementById('prevMonth');
+      const nextMonthBtn = document.getElementById('nextMonth');
+      const calendarDialog = document.getElementById('calendarDialog');
+      const closeCalendarDialog = document.getElementById('closeCalendarDialog');
+      const dialogDate = document.getElementById('dialogDate');
+      const dialogEvents = document.getElementById('dialogEvents');
+
+      // Calendar events object
+      const events = {
+        // Format: 'YYYY-MM-DD': [event1, event2, ...]
+        '2025-08-23': ['Interview with Family A', 'CPR Training'],
+        '2025-08-25': ['Tutoring Session'],
+        '2025-09-01': ['Newborn Care Start'],
+        '2025-09-10': ['Parent Coaching'],
+        '2025-09-15': ['Nutrition Workshop'],
+      };
+
+      // Upcoming Events List
+      function renderUpcomingEvents() {
+        const upcomingEvents = document.getElementById('upcomingEvents');
+        if (!upcomingEvents) return;
+        upcomingEvents.innerHTML = '';
+        const today = new Date();
+        // Flatten events into array of {date, event}
+        let allEvents = [];
+        for (const date in events) {
+          events[date].forEach(ev => {
+            allEvents.push({ date, event: ev });
+          });
+        }
+        // Sort by date ascending
+        allEvents.sort((a, b) => new Date(a.date) - new Date(b.date));
+        // Filter for today or future
+        allEvents = allEvents.filter(e => new Date(e.date) >= today);
+        // Show next 5 events
+        if (allEvents.length === 0) {
+          upcomingEvents.innerHTML = '<li><em>No upcoming events.</em></li>';
+        } else {
+          allEvents.slice(0, 5).forEach(e => {
+            const li = document.createElement('li');
+            li.style.marginBottom = '12px';
+            li.innerHTML = `<span style="color:var(--brown-dark);font-weight:bold;">${e.date}</span><br>${e.event}`;
+            upcomingEvents.appendChild(li);
+          });
+        }
+      }
+
+      let today = new Date();
+      let currentMonth = today.getMonth();
+      let currentYear = today.getFullYear();
+
+      function renderCalendar(month, year) {
+        calendarBody.innerHTML = '';
+        const firstDay = new Date(year, month, 1).getDay();
+        const daysInMonth = new Date(year, month + 1, 0).getDate();
+        calendarMonthYear.textContent = `${today.toLocaleString('default', { month: 'long' })} ${year}`;
+
+        let date = 1;
+        for (let i = 0; i < 6; i++) {
+          let row = document.createElement('tr');
+          for (let j = 0; j < 7; j++) {
+            let cell = document.createElement('td');
+            if (i === 0 && j < firstDay) {
+              cell.innerHTML = '';
+            } else if (date > daysInMonth) {
+              cell.innerHTML = '';
+            } else {
+              cell.innerHTML = date;
+              let cellDate = `${year}-${String(month + 1).padStart(2, '0')}-${String(date).padStart(2, '0')}`;
+              cell.setAttribute('data-date', cellDate);
+
+              // Event indicator
+              if (events[cellDate]) {
+                const indicator = document.createElement('span');
+                indicator.className = 'calendar-event-indicator';
+                cell.appendChild(indicator);
+              }
+
+              if (
+                date === today.getDate() &&
+                month === today.getMonth() &&
+                year === today.getFullYear()
+              ) {
+                cell.classList.add('today');
+              }
+              cell.addEventListener('click', function() {
+                showDialog(cellDate);
+              });
+              date++;
+            }
+            row.appendChild(cell);
+          }
+          calendarBody.appendChild(row);
+          if (date > daysInMonth) break;
+        }
+        // Update month name for selected month
+        const monthName = new Date(year, month, 1).toLocaleString('default', { month: 'long' });
+        calendarMonthYear.textContent = `${monthName} ${year}`;
+      }
+
+      function showDialog(dateStr) {
+        dialogDate.textContent = dateStr;
+        if (events[dateStr]) {
+          dialogEvents.innerHTML = events[dateStr].map(ev => `<div>• ${ev}</div>`).join('');
+        } else {
+          dialogEvents.innerHTML = '<em>No events for this date.</em>';
+        }
+        calendarDialog.style.display = 'flex';
+      }
+
+      closeCalendarDialog.onclick = function() {
+        calendarDialog.style.display = 'none';
+      };
+
+      prevMonthBtn.onclick = function() {
+        currentMonth--;
+        if (currentMonth < 0) {
+          currentMonth = 11;
+          currentYear--;
+        }
+        renderCalendar(currentMonth, currentYear);
+      };
+
+      nextMonthBtn.onclick = function() {
+        currentMonth++;
+        if (currentMonth > 11) {
+          currentMonth = 0;
+          currentYear++;
+        }
+        renderCalendar(currentMonth, currentYear);
+      };
+
+      // Close dialog on outside click
+      calendarDialog.addEventListener('click', function(e) {
+        if (e.target === calendarDialog) {
+          calendarDialog.style.display = 'none';
+        }
+      });
+
+      renderCalendar(currentMonth, currentYear);
+      renderUpcomingEvents();
+    });
+
+    // Testimonial scroll logic
+    document.addEventListener('DOMContentLoaded', function() {
+      const testimonialAreas = document.getElementById('testimonialAreas');
+      const testimonialScrollLeft = document.getElementById('testimonialScrollLeft');
+      const testimonialScrollRight = document.getElementById('testimonialScrollRight');
+      const cardWidth = testimonialAreas.querySelector('.testimonial-card').offsetWidth + 18; // 18px gap
+
+      testimonialScrollLeft.addEventListener('click', function() {
+        testimonialAreas.scrollBy({ left: -cardWidth * 2, behavior: 'smooth' });
+      });
+
+      testimonialScrollRight.addEventListener('click', function() {
+        testimonialAreas.scrollBy({ left: cardWidth * 2, behavior: 'smooth' });
+      });
+    });
+
+    // Smooth scroll for navigation buttons
+    document.addEventListener('DOMContentLoaded', function() {
+      document.querySelectorAll('nav a[href^="#"]').forEach(function(navLink) {
+        navLink.addEventListener('click', function(e) {
+          const targetId = navLink.getAttribute('href').slice(1);
+          const targetSection = document.getElementById(targetId);
+          if (targetSection) {
+            e.preventDefault();
+            targetSection.scrollIntoView({ behavior: 'smooth' });
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
