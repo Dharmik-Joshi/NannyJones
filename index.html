@@ -566,12 +566,25 @@
       margin-top: 8px; /* Move testimonial text closer to family name */
     }
     .testimonial-text p {
-      font-size: 1.05rem;
+  font-size: 0.95rem;
       color: var(--accent-dark);
       margin-bottom: 12px;
       margin-top: 0;
       font-style: italic;
     }
+      .testimonial-hover-tip {
+  display: none;
+  font-style: italic;
+  color: var(--brown-dark);
+  font-size: 0.75rem;
+  font-weight: bold;
+  margin-top: 2px;
+  transition: opacity 0.2s;
+      }
+      .testimonial-card:hover .testimonial-hover-tip {
+        display: block;
+        opacity: 1;
+      }
     .testimonial-arrow {
       position: absolute;
       top: 40%; /* Move arrows up so they don't fall down too much */
@@ -688,8 +701,21 @@
   <section id="about">
     <h2>About Me</h2>
     <p>
-      As a career Governess Nanny, your children are my main focus. I am a highly educated private in-home Nanny, Parenting Coach, Trainer, and Organizer delivering personalized, nurturing, and educational childcare. I have experience with newborns, young children, twins, and various family dynamics, focusing on care, education, nutrition, and overall development.
-    </p>
+    As a career Governess Nanny, your children are my main focus and drive.
+  </p>
+  <p>
+    I am a highly educated private in-home Governess Nanny, Parenting Coach, Trainer, 
+    and Organizer committed to delivering personalized, nurturing, and educational childcare, 
+    supporting the unique needs of individual children and families.
+  </p>
+  <p>
+    I am experienced with newborns, young children, twins, and various family dynamics, 
+    focusing on care, education, nutrition, health, and development.
+  </p>
+  <p>
+    With my flexible schedule, I provide guidance and assistance while increasing parents’ free time, 
+    optimizing family time, and creating an overall harmonious home life.
+  </p>
     <p>
       Valid US Passport | NY State Driver’s License | Professional Certifications
     </p>
@@ -697,8 +723,31 @@
   <section id="history">
     <h2>History / Background</h2>
     <p>
-      Over 30 years in childcare, starting as a babysitter and camp counselor, progressing to teaching and mentoring roles, ultimately becoming a full-time private Governess Nanny.
-    </p>
+    I’ve been providing childcare, in various ways and to various degrees, for over 30 years, 
+    including non-nanny positions.
+  </p>
+  <p>
+    Starting out as a peer mentor in elementary school and continuing through college, 
+    I gained a great deal of insight into a diverse population of varying ages.
+  </p>
+  <p>
+    I still continue being involved in mentor programs with school-aged children and young adults. 
+    I’ve branched into developing community programs as well, all of which is incredibly rewarding.
+  </p>
+  <p>
+    At 10 years old I began as a babysitter, became a camp counselor in my teens, 
+    and eventually worked as a religious school teacher in my early 20’s.
+  </p>
+  <p>
+    Later, I moved into helping overwhelmed families in my spare time, 
+    assisting parents with daily childcare. My passion for children fueled my 
+    independent studies in everything child-related, and I eventually moved into 
+    nannying as my full-time career without looking back!
+  </p>
+  <p>
+    I love my career with children, and I look forward to the many more adventures 
+    I have yet to experience with it!
+  </p>
     <div style="text-align:center">
       <a class="button-link" href="NannyJonesResume.pdf" target="_blank">Complete Experience</a>
     </div>
@@ -706,8 +755,16 @@
   <section id="services">
     <h2>Services</h2>
     <p>
-      Primary location: NYC and Long Island. I work 1-on-1, providing 50+ positions and services regularly and flexibly upon request.
+      Primary location: NYC and Long Island. 
     </p>
+     <p>
+    Instead of dealing with over 50 individuals, you have one person — me.
+  </p>
+  <p>
+    I provide over 50 positions and services on a regular basis, often simultaneously, 
+    knowing how and when to switch between them as required, and always at your 
+    convenience upon immediate request and need for each service.
+  </p>
     <h3>Areas of Service</h3>
     <div class="service-areas-container">
       <button class="arrow-btn arrow-left" id="scrollLeftBtn">&#10094;</button>
@@ -761,28 +818,31 @@
     <div class="testimonial-areas-container">
       <button class="testimonial-arrow arrow-left" id="testimonialScrollLeft">&#10094;</button>
       <div class="testimonial-areas" id="testimonialAreas">
-        <div class="testimonial-card">
+        <div class="testimonial-card" data-name="Christina E, Bellmore, N.Y." data-full="Justine has demonstrated tremendous responsibility in taking care of my children. She loves children, and I see this manifest in her creative ideas and activities she does with them. She keeps the children occupied and most importantly, safe. Justine is a gifted nanny and person, any family would be lucky to have her.">
           <div class="testimonial-family">
-            <span class="testimonial-family-name">Smith Family</span>
+            <span class="testimonial-family-name">Christina E</span>
           </div>
           <div class="testimonial-text">
-            <p>"Nanny Jones is truly a lifesaver! Our twins adore her and we've seen amazing growth in their learning."</p>
+                <p>"Justine is a gifted nanny and person, any family would be lucky to have her."</p>
+                <span class="testimonial-hover-tip">click for entire testimonial</span>
           </div>
         </div>
-        <div class="testimonial-card">
+        <div class="testimonial-card" data-name="Irene D, North Bellmore, N.Y." data-full="My family and I are crazy about her. Justine is fun and inventive, smart, easy going, very patient, caring, and just connects with kids so easily and naturally. I recommend her wholeheartedly to anyone who needs childcare or education. Justine is a very valuable Nanny.">
           <div class="testimonial-family">
-            <span class="testimonial-family-name">Butler Family</span>
+            <span class="testimonial-family-name">Irene D</span>
           </div>
           <div class="testimonial-text">
-            <p>"Her structured play and caring nature made our child feel safe and happy every day."</p>
+                <p>"Fun, inventive, patient, and connects with kids so easily and naturally."</p>
+                <span class="testimonial-hover-tip">click for entire testimonial</span>
           </div>
         </div>
-        <div class="testimonial-card">
+        <div class="testimonial-card" data-name="Joseph A, Muttontown, N.Y." data-full="Justine excelled in engaging our children in various activities, getting outside daily, and is a familiar face in the neighborhood, where she is well-regarded by our neighbors. She played a key role in teaching our children academic skills and was always on top of the children through their development milestones, including fostering healthy eating habits, schedules, routines, and discipline. We highly recommend Justine to any family seeking a dedicated and caring nanny.">
           <div class="testimonial-family">
-            <span class="testimonial-family-name">Patel Family</span>
+            <span class="testimonial-family-name">Joseph A</span>
           </div>
           <div class="testimonial-text">
-            <p>"We couldn't ask for a better nanny. She is organized, loving, and always professional."</p>
+                <p>"Played a key role in teaching academic skills and supporting development milestones."</p>
+                <span class="testimonial-hover-tip">click for entire testimonial</span>
           </div>
         </div>
         <div class="testimonial-card">
@@ -790,7 +850,8 @@
             <span class="testimonial-family-name">Thompson Family</span>
           </div>
           <div class="testimonial-text">
-            <p>"Her nutrition advice and tutoring helped our son excel in school and stay healthy."</p>
+                <p>"Her nutrition advice and tutoring helped our son excel in school and stay healthy."</p>
+                <span class="testimonial-hover-tip">click for entire testimonial</span>
           </div>
         </div>
         <div class="testimonial-card">
@@ -798,12 +859,21 @@
             <span class="testimonial-family-name">Lee Family</span>
           </div>
           <div class="testimonial-text">
-            <p>"Nanny Jones brings joy and structure to our home. Highly recommended!"</p>
+                <p>"Nanny Jones brings joy and structure to our home. Highly recommended!"</p>
+                <span class="testimonial-hover-tip">click for entire testimonial</span>
           </div>
         </div>
       </div>
       <button class="testimonial-arrow arrow-right" id="testimonialScrollRight">&#10095;</button>
     </div>
+      <!-- Testimonial Modal -->
+      <div id="testimonialModal" style="display:none;position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(60,40,20,0.25);z-index:9999;align-items:center;justify-content:center;">
+        <div style="background:#fff url('https://www.transparenttextures.com/patterns/paper-fibers.png') repeat;border-radius:14px;box-shadow:0 8px 32px rgba(60,40,20,0.18);padding:28px 24px 18px 24px;min-width:280px;max-width:90vw;position:relative;text-align:center;">
+          <span id="closeTestimonialModal" style="position:absolute;top:12px;right:18px;font-size:1.5rem;color:#6B4C3B;cursor:pointer;font-weight:bold;transition:color 0.2s;">&times;</span>
+          <h3 id="testimonialModalTitle" style="color:#6B4C3B;font-family:'Rouge Script',cursive;font-size:2rem;margin-bottom:18px;"></h3>
+          <div id="testimonialModalText" style="font-size:1.1rem;color:#2C2C2C;"></div>
+        </div>
+      </div>
   </section>
   <section id="calendar">
     <h2>Calendar</h2>
@@ -907,6 +977,34 @@
         serviceAreas.scrollBy({ left: cardWidth * 2, behavior: 'smooth' });
       });
     });
+
+      // Testimonial modal logic
+      document.addEventListener('DOMContentLoaded', function() {
+        const testimonialCards = document.querySelectorAll('.testimonial-card');
+        const modal = document.getElementById('testimonialModal');
+        const modalTitle = document.getElementById('testimonialModalTitle');
+        const modalText = document.getElementById('testimonialModalText');
+        const closeModal = document.getElementById('closeTestimonialModal');
+
+        testimonialCards.forEach(card => {
+          card.style.cursor = 'pointer';
+          card.addEventListener('click', function() {
+            const name = card.getAttribute('data-name') || card.querySelector('.testimonial-family-name').textContent;
+            const full = card.getAttribute('data-full') || card.querySelector('.testimonial-text p').textContent;
+            modalTitle.textContent = `${name}'s Testimonial`;
+            modalText.textContent = full;
+            modal.style.display = 'flex';
+          });
+        });
+        closeModal.onclick = function() {
+          modal.style.display = 'none';
+        };
+        modal.addEventListener('click', function(e) {
+          if (e.target === modal) {
+            modal.style.display = 'none';
+          }
+        });
+      });
 
     // Calendar logic
     document.addEventListener('DOMContentLoaded', function() {
